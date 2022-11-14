@@ -1,35 +1,27 @@
 package com.github.jonathangunawanstd;
 
-# EditorConfig is awesome: https://EditorConfig.org
+public class Main {
+    public static void main(String[] args) {
+        plugins {
+    id 'java'
+}
 
-# top-most EditorConfig file
-root = true
+group 'com.github.jonathangunawanstd'
+version '1.0-SNAPSHOT'
 
-# Unix-style newlines with a newline ending every file
-[*]
-end_of_line = lf
-insert_final_newline = true
+            compileJava.options.encoding = 'UTF-8’
 
-# Matches multiple files with brace expansion notation
-# Set default charset
-[*.{js,py}]
-charset = utf-8
+repositories {
+    mavenCentral()
+}
 
-# 4 space indentation
-[*.py]
-indent_style = space
-indent_size = 4
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
 
-# Tab indentation (no size specified)
-[Makefile]
-indent_style = tab
-
-# Indentation override for all JS under lib directory
-[lib/**.js]
-indent_style = space
-indent_size = 2
-
-# Matches the exact files either package.json or .travis.yml
-[{package.json,.travis.yml}]
-indent_style = space
-indent_size = 2
+test {
+    useJUnitPlatform()
+}
+    }
+}
